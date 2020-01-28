@@ -5,26 +5,49 @@ import javafx.fxml.FXML;
 public class Berechnung {
 
     @FXML
-    private double nettopreisInput;
+    private double bruttopreisInput;
+    @FXML
     private double anzahlungInput;
-    private double zinsInput;
-    private double laufzeitInput;
+    @FXML
+    private Double zinsInput;
+    @FXML
+    private int laufzeitInput;
+    @FXML
     private double restwertInput;
 
-    public Berechnung(double nettopreisInput, double anzahlungInput, double zinsInput, double laufzeitInput, double restwertInput) {
-        this.nettopreisInput = nettopreisInput;
+    private double rate;
+    private double amortisation;
+    private double zinskosten;
+
+    private String name;
+
+
+    public Berechnung(double bruttopreisInput, double anzahlungInput, Double zinsInput, int laufzeitInput,
+                      double restwertInput, double rate, double amortisation, double zinskosten) {
+        this.bruttopreisInput = bruttopreisInput;
+        this.anzahlungInput = anzahlungInput;
+        this.zinsInput = zinsInput;
+        this.laufzeitInput = laufzeitInput;
+        this.restwertInput = restwertInput;
+        this.rate = rate;
+        this.amortisation = amortisation;
+        this.zinskosten = zinskosten;
+    }
+
+    public Berechnung(double bruttopreisInput, double anzahlungInput, Double zinsInput, int laufzeitInput, double restwertInput) {
+        this.bruttopreisInput = bruttopreisInput;
         this.anzahlungInput = anzahlungInput;
         this.zinsInput = zinsInput;
         this.laufzeitInput = laufzeitInput;
         this.restwertInput = restwertInput;
     }
 
-    public double getNettopreisInput() {
-        return nettopreisInput;
+    public double getBruttopreisInput() {
+        return bruttopreisInput;
     }
 
-    public void setNettopreisInput(double nettopreisInput) {
-        this.nettopreisInput = nettopreisInput;
+    public void setBruttopreisInput(double bruttopreisInput) {
+        this.bruttopreisInput = bruttopreisInput;
     }
 
     public double getAnzahlungInput() {
@@ -35,27 +58,60 @@ public class Berechnung {
         this.anzahlungInput = anzahlungInput;
     }
 
-    public double getZinsInput() {
+    public Double getZinsInput() {
         return zinsInput;
     }
 
-    public void setZinsInput(double zinsInput) {
+    public void setZinsInput(Double zinsInput) {
         this.zinsInput = zinsInput;
     }
 
-    public double getLaufzeitInput() {
+    public int getLaufzeitInput() {
         return laufzeitInput;
     }
 
-    public void setLaufzeitInput(double laufzeitInput) {
+    public void setLaufzeitInput(int laufzeitInput) {
         this.laufzeitInput = laufzeitInput;
     }
 
-    public double getrestwertInput() {
+    public double getRestwertInput() {
         return restwertInput;
     }
 
-    public void setrestwertInput(double restwertInput) {
+    public void setRestwertInput(double restwertInput) {
         this.restwertInput = restwertInput;
+    }
+
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public double getAmortisation() {
+        return amortisation;
+    }
+
+    public void setAmortisation(double amortisation) {
+        this.amortisation = amortisation;
+    }
+
+    public double getZinskosten() {
+        return zinskosten;
+    }
+
+    public void setZinskosten(double zinskosten) {
+        this.zinskosten = zinskosten;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
